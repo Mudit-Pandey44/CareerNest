@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import defaultAvatar from "../assets/default-avatar.png";
 
 const Profile = () => {
   const fileRef = useRef(null);
@@ -72,10 +73,7 @@ const Profile = () => {
       {/* LEFT SIDE */}
       <div className="profile-left">
         <div className="profile-photo" onClick={() => fileRef.current.click()}>
-          <img
-            src={profilePic || "https://via.placeholder.com/150"}
-            alt="profile"
-          />
+          <img src={profilePic ? profilePic : defaultAvatar} alt="profile" />
         </div>
 
         <input
