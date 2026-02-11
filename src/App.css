@@ -487,13 +487,13 @@
 /* ===== AUTH PAGE MODERN UI ===== */
 
 
-===== PAGE BACKGROUND (Profile jaisa) =====
+/* ===== PAGE BACKGROUND (Profile jaisa) ===== */
 .auth-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4f6f9;   /* same as profile */
+  background: #f4f6f9;   /* same as profile  */
   padding: 40px;
   font-family: "Segoe UI", sans-serif;
 }
