@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import defaultAvatar from "../assets/default-avatar.png";
 
 function Navbar({ search, setSearch }) {
   const navigate = useNavigate();
@@ -53,10 +54,7 @@ function Navbar({ search, setSearch }) {
         <a href="/auth">Login / Signup</a>
         {/* Profile Circle */}
         <div className="profile-circle" onClick={() => navigate("/profile")}>
-          <img
-            src={profilePic || "https://via.placeholder.com/40"}
-            alt="profile"
-          />
+          <img src={profilePic ? profilePic : defaultAvatar} alt="profile" />
         </div>
       </div>
     </nav>
