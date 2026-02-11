@@ -1,0 +1,966 @@
+/* ===== NAVBAR PROFESSIONAL ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left */
+.nav-left h2 {
+  color: white;
+  font-size: 22px;
+}
+
+/* Center Search */
+.nav-center {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-center input {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 260px;
+}
+
+.nav-center button {
+  background: #00a8ff;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.auth-btn {
+  background: linear-gradient(135deg, #00a8ff, #0077ff);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.auth-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 168, 255, 0.4);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-center input {
+    width: 200px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+/* Search Box in Navbar */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box button {
+  padding: 8px 14px;
+  border: none;
+  background: #00a8ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-box button:hover {
+  opacity: 0.9;
+}
+
+
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+  background: #f8f9fa;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.hero-left h1 span {
+  color: #00a8ff;
+}
+
+.hero-left p {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #555;
+  max-width: 550px;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  border: none;
+  background: #00a8ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+.hero-right {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 420px;
+}
+
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.section.light {
+  background-color: #ecf0f1;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* About */
+.about-text {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+}
+
+/* Footer */
+/* ===== FOOTER ===== */
+
+.footer {
+  background: #0f2027;
+  color: white;
+  padding: 50px 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-container h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #00a8ff;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #888;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: #0a74da;
+}
+
+.pagination {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  background: #f1f1f1;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background: #00a8ff;
+  color: white;
+}
+
+.pagination button:first-child {
+  background: #00a8ff;
+  color: white;
+}
+
+/* Filter Buttons Container */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 30px 0 50px;
+  flex-wrap: wrap;
+}
+
+/* Button Base Style */
+.filters button {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover effect */
+.filters button:hover {
+  background: #00a8ff;
+  color: white;
+  border-color: #00a8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 168, 255, 0.3);
+}
+
+/* Active button look (optional but premium) */
+.filters button.active {
+  background: #00a8ff;
+  color: white;
+  border-color: #00a8ff;
+  box-shadow: 0 6px 15px rgba(0, 168, 255, 0.35);
+}
+
+/* job-count */
+.job-count {
+  max-width: 1200px;
+  margin: 0 auto 25px;
+  padding: 12px 20px;
+  background: #f8fbff;
+  border: 1px solid #e3f2fd;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Highlight numbers */
+.job-count span {
+  color: #2bb8ff;
+  font-weight: 600;
+}
+
+/*  no jobs section  */
+
+.no-jobs {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 50px 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fbff, #ffffff);
+  border: 1px solid #e6f2ff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.no-jobs h2 {
+  font-size: 24px;
+  color: #00a8ff;
+  margin-bottom: 10px;
+}
+
+.no-jobs p {
+  font-size: 15px;
+  color: #666;
+}
+
+
+/* Job Details Page */
+/* Job Details Page */
+.job-details {
+  min-height: 100vh;
+  background: #f7faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.job-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.job-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.job-card h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.job-card h2 {
+  color: #00a8ff;
+  margin-bottom: 20px;
+}
+
+.job-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.form-title {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.apply-form input,
+.apply-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.apply-btn {
+  background: #00a8ff;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: #0088cc;
+}
+
+.success-msg {
+  background: #e6fff2;
+  color: #0f8a4c;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.back-btn {
+  margin-top: 20px;
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pagination button.active {
+  background: #00a8ff;
+  color: white;
+  font-weight: bold;
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ===== AUTH PAGE MODERN UI ===== */
+
+
+/* ===== PAGE BACKGROUND (Profile jaisa) ===== */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;   /* same as profile */
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== CARD (Profile section jaisa) ===== */
+.auth-card {
+  width: 380px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== TABS ===== */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.auth-tabs button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.auth-tabs button.active {
+  color: #111827;
+  border-bottom: 2px solid #0ea5e9;   /* same accent blue */
+}
+
+/* ===== TITLE ===== */
+.auth-card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* ===== INPUTS (Profile jaisa) ===== */
+.auth-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 15px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14,165,233,0.2);
+}
+
+/* ===== ERROR / SUCCESS ===== */
+.auth-error {
+  color: #ef4444;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.auth-success {
+  color: #16a34a;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTON (Profile save button jaisa) ===== */
+.auth-main-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0ea5e9;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.auth-main-btn:hover {
+  background: #0284c7;
+}
+
+
+
+
+
+
+.contact-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.contact-left h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact-left p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00a8ff;
+  outline: none;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #00a8ff, #0077ff);
+  border: none;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 10px 25px rgba(0,168,255,0.4);
+}
+
+/* saved  */
+.saved-btn {
+  background: #00a8ff;
+  color: white;
+}
+
+.saved-page h1 {
+  margin-bottom: 20px;
+}
+
+.saved-page p {
+  font-size: 16px;
+  color: gray;
+}
+
+/* ===== SAVED JOBS PAGE ===== */
+
+.saved-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.saved-page h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.empty-saved {
+  background: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.empty-saved h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.empty-saved p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.browse-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #00a8ff, #0077ff);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.browse-btn:hover {
+  box-shadow: 0 10px 25px rgba(0,168,255,0.4);
+}
+
+/* back button */
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #00a8ff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+
+.resume-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.upload-label {
+  border: 2px dashed #00a8ff;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #0077ff;
+  font-weight: 600;
+  background: #f8fbff;
+}
+
+.upload-label:hover {
+  background: #eef6ff;
+}
+
+.file-name {
+  font-size: 14px;
+  color: green;
+}
+
+.error-text {
+  font-size: 14px;
+  color: red;
+}
+
+/* Save button default */
+.save-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* When saved */
+.saved-btn {
+  background: #0077ff !important;
+  color: #fff !important;
+  border-color: #0077ff !important;
+}
+
+/* Hover effect */
+.save-btn:hover {
+  background: #f3f4f6;
+}
+
+/*  */
+/*  *//* ===== MAIN LAYOUT ===== */
+.profile-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px 60px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* ===== LEFT PROFILE CARD ===== */
+.profile-left {
+  width: 280px;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 20px;
+}
+
+/* Profile Image */
+.profile-photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e0f2fe;
+  transition: 0.3s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.05);
+}
+
+/* Name */
+.profile-left h2 {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Subtitle */
+.profile-left p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ===== RIGHT SIDE CONTENT ===== */
+.profile-right {
+  flex: 1;
+}
+
+/* Sections */
+.profile-right section {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Title */
+.profile-right h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #111827;
+  border-left: 4px solid #0ea5e9;
+  padding-left: 10px;
+}
+
+/* Inputs */
+.profile-right input,
+.profile-right textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.profile-right input:focus,
+.profile-right textarea:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+/* Textarea */
+.profile-right textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Buttons */
+.profile-right button {
+  background: #0ea5e9;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.profile-right button:hover {
+  background: #0284c7;
+}
+
+/* Save Button */
+/* .save-btn {
+  width: 100%;
+  font-weight: 600;
+  padding: 12px;
+} */
+
+/* ===== NAVBAR PROFILE CIRCLE ===== */
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 15px;
+  border: 2px solid white;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/*  */
+/* ===== SAVED JOBS PAGE ===== */
+.saved-container {
+  padding: 40px 60px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header Section */
+.saved-header {
+  margin-bottom: 30px;
+}
+
+.saved-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.saved-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Divider */
+.saved-header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0ea5e9;
+  margin-top: 12px;
+  border-radius: 2px;
+}
