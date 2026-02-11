@@ -73,7 +73,11 @@ const Profile = () => {
       {/* LEFT SIDE */}
       <div className="profile-left">
         <div className="profile-photo" onClick={() => fileRef.current.click()}>
-          <img src={profilePic ? profilePic : defaultAvatar} alt="profile" />
+          <img
+            src={profilePic ? profilePic : defaultAvatar}
+            alt="profile"
+            className="avatar-img"
+          />
         </div>
 
         <input
