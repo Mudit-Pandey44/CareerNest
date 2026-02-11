@@ -41,15 +41,10 @@ function Navbar({ search, setSearch }) {
         <button>Search</button>
       </div>
 
-      {/* Right - Links */}
       <div className="nav-right">
         <Link to="/">Home</Link>
         <a href="#cards">Jobs</a>
         <a href="#contact">Contact</a>
-
-        {/* <Link to="/jobs">Jobs</Link>
-        <Link to="/contact">Contact</Link> */}
-
         <a href="/saved">Saved Jobs</a>
         <a href="/auth">Login / Signup</a>
         {/* Profile Circle */}
