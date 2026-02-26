@@ -943,7 +943,23 @@
   background: #0284c7;
 }
 
+@media (max-width: 768px) {
 
+  .profile-main {
+    flex-direction: column;   /* 2 column → 1 column */
+    padding: 30px 20px;
+  }
+
+  .profile-left {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .profile-right {
+    width: 100%;
+  }
+
+}
 
 
 /* Save Button */
