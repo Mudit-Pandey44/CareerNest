@@ -21,22 +21,72 @@ function Auth() {
     setSuccess("");
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
+    console.log("Button clicked");
+
+    // validation
     if (mode === "signup" && form.name.trim() === "") {
-      return setError("Name is required");
+      setError("Name is required");
+      return;
     }
 
     if (!form.email.includes("@")) {
-      return setError("Enter a valid email");
+      setError("Enter a valid email");
+      return;
     }
 
     if (form.password.length < 6) {
-      return setError("Password must be at least 6 characters");
+      setError("Password must be at least 6 characters");
+      return;
     }
 
-    setSuccess(mode === "login" ? "Login successful ✅" : "Account created ✅");
+    try {
+      const url =
+        mode === "login"
+          ? "http://localhost:5000/login"
+          : "http://localhost:5000/signup";
 
-    navigate("/");
+      console.log("API URL:", url);
+      console.log("Sending Data:", form);
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      console.log("Response:", data);
+
+      // LOGIN
+      if (mode === "login") {
+        if (data.user) {
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setSuccess("Login successful ✅");
+
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        } else {
+          setError(data.message || "Login failed");
+        }
+      }
+
+      // SIGNUP
+      else {
+        setSuccess(data.message || "Signup success");
+
+        setTimeout(() => {
+          setMode("login");
+        }, 1000);
+      }
+    } catch (err) {
+      console.log("ERROR:", err);
+      setError("Server error (backend check kar)");
+    }
   }
 
   return (

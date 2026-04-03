@@ -15,6 +15,28 @@ import zomato from "../assets/logos/zomato.png";
 import paytm from "../assets/logos/paytm.png";
 import startup from "../assets/logos/startup.png";
 
+const applyJob = async (job) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const resume = localStorage.getItem("resume");
+
+  if (!user) return alert("Login first");
+
+  await fetch("http://localhost:5000/apply", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userEmail: user.email,
+      jobTitle: job.title,
+      company: job.company,
+      resume: resume,
+    }),
+  });
+
+  alert("Applied Successfully");
+};
+
 const logos = {
   Google: google,
   Amazon: amazon,
@@ -81,7 +103,16 @@ const Card = ({
         </div>
 
         <Link to={`/job/${index}`}>
-          <button>Apply Now</button>
+          <button
+            onClick={() =>
+              applyJob({
+                title,
+                company,
+              })
+            }
+          >
+            Apply Now
+          </button>
         </Link>
       </div>
     </div>

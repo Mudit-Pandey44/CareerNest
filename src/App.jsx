@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Auth from "./pages/Auth";
 
@@ -12,6 +12,24 @@ import JobDetails from "./components/JobDetails";
 import SavedJobs from "./pages/SavedJobs";
 
 import Profile from "./pages/Profile";
+
+function AutoRedirect() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+
+    if (!user) {
+      const timer = setTimeout(() => {
+        navigate("/auth");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  return null;
+}
 
 /* ====== BIG JOB DATA (36 JOBS = 6 PAGES) ====== */
 const jobsData = [
@@ -340,6 +358,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar search={search} setSearch={setSearch} />
+      <AutoRedirect />
 
       <Routes>
         <Route

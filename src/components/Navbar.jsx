@@ -6,7 +6,15 @@ function Navbar({ search, setSearch }) {
   const navigate = useNavigate();
   const [profilePic, setProfilePic] = useState("");
 
-  // Jab component load ho ya localStorage change ho
+  // ✅ USER GET
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // logout function
+  const logout = () => {
+    localStorage.removeItem("user");
+    window.location.reload();
+  };
+
   useEffect(() => {
     const loadImage = () => {
       const savedPic = localStorage.getItem("profilePic");
@@ -14,8 +22,6 @@ function Navbar({ search, setSearch }) {
     };
 
     loadImage();
-
-    // storage event listener (agar dusre tab me change ho)
     window.addEventListener("storage", loadImage);
 
     return () => {
@@ -27,7 +33,9 @@ function Navbar({ search, setSearch }) {
     <nav className="navbar">
       {/* Left - Logo */}
       <div className="nav-left">
-        <h2>CareerNest</h2>
+        <h2 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+          CareerNest
+        </h2>
       </div>
 
       {/* Center - Search */}
@@ -46,7 +54,17 @@ function Navbar({ search, setSearch }) {
         <a href="#cards">Jobs</a>
         <a href="#contact">Contact</a>
         <a href="/saved">Saved Jobs</a>
-        <a href="/auth">Login / Signup</a>
+
+        {/* ✅ LOGIN / USER SECTION */}
+        {user ? (
+          <>
+            <span>Hi, {user.name} 👋</span>{" "}
+            <button onClick={logout}>Logout</button>
+          </>
+        ) : (
+          <a href="/auth">Login / Signup</a>
+        )}
+
         {/* Profile Circle */}
         <div className="profile-circle" onClick={() => navigate("/profile")}>
           <img src={profilePic ? profilePic : defaultAvatar} alt="profile" />

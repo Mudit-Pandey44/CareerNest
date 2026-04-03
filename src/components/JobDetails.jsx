@@ -42,9 +42,44 @@ function JobDetails({ jobs }) {
 
   if (!job) return <h2 style={{ padding: "40px" }}>Job not found</h2>;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) {
+      alert("Login first");
+      return;
+    }
+
+    if (!file) {
+      setError("Please upload resume");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userEmail: user.email,
+          jobTitle: job.title,
+          company: job.company,
+          resume: file.name, // 👈 file name send
+        }),
+      });
+
+      const data = await res.json();
+
+      console.log("APPLY RESPONSE:", data);
+
+      setSubmitted(true);
+    } catch (err) {
+      console.log(err);
+      alert("Error applying");
+    }
   };
 
   function handleFileChange(e) {

@@ -64,7 +64,8 @@ const Profile = () => {
       return;
     }
 
-    localStorage.setItem("cvName", file.name);
+    localStorage.setItem("resume", file.name);
+    localStorage.setItem("cvName", file.name); // optional display
     setCvName(file.name);
   };
 
