@@ -22,7 +22,7 @@ function AutoRedirect() {
     if (!user) {
       const timer = setTimeout(() => {
         navigate("/auth");
-      }, 5000);
+      }, 50000);
 
       return () => clearTimeout(timer);
     }
