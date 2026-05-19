@@ -4,31 +4,60 @@ import heroImg from "../assets/hero.png";
 const Hero = () => {
   return (
     <section className="hero" id="home">
+      <div className="hero-overlay"></div>
+
       <div className="hero-left">
+        <span className="hero-tag">🚀 Trusted By 10K+ Job Seekers</span>
+
         <h1>
-          Find Your Dream Job with <span>CareerNest</span>
+          Find Your Dream Job With <span>CareerNest</span>
         </h1>
 
         <p>
-          CareerNest is a modern job discovery platform where students and
-          professionals can explore opportunities, connect with companies, and
-          apply for jobs easily. Start your career journey with confidence.
+          CareerNest is a modern career platform where students, freshers, and
+          professionals can discover internships, remote jobs, and full-time
+          opportunities from top companies.
         </p>
 
-        <button
-          className="hero-btn"
-          onClick={() => {
-            document
-              .getElementById("cards")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Explore Jobs
-        </button>
+        <div className="hero-buttons">
+          <button
+            className="hero-btn"
+            onClick={() => {
+              document
+                .getElementById("cards")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Explore Jobs
+          </button>
+
+          <a href="#about">
+            <button className="hero-btn-secondary">Learn More</button>
+          </a>
+        </div>
+
+        <div className="hero-stats">
+          <div>
+            <h2>10K+</h2>
+            <span>Active Users</span>
+          </div>
+
+          <div>
+            <h2>500+</h2>
+            <span>Companies</span>
+          </div>
+
+          <div>
+            <h2>2500+</h2>
+            <span>Jobs Posted</span>
+          </div>
+        </div>
       </div>
 
       <div className="hero-right">
-        <img src={heroImg} alt="Job Search" />
+        <div className="hero-image-box">
+          <img src={heroImg} alt="Job Search" />
+        </div>
       </div>
     </section>
   );

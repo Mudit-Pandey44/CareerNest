@@ -294,7 +294,7 @@ const jobsData = [
   },
   // update 6 to 50
 
-  ...Array.from({ length: 270 }, (_, i) => ({
+  ...Array.from({ length: 2470 }, (_, i) => ({
     company: [
       "Google",
       "Amazon",
@@ -341,18 +341,25 @@ const jobsData = [
       "Cyber Security Analyst",
       "Java Developer",
       "Product Manager",
-    ][Math.floor(Math.random() * 20)],
+      "Blockchain Developer",
+      "Machine Learning Engineer",
+      "Flutter Developer",
+      "Node.js Developer",
+      "Cyber Security Engineer",
+    ][Math.floor(Math.random() * 25)],
 
     location: [
       "Delhi",
-      "Bangalore",
-      "Noida",
-      "Hyderabad",
       "Mumbai",
       "Pune",
+      "Noida",
+      "Bangalore",
+      "Hyderabad",
       "Remote",
       "Chennai",
-    ][Math.floor(Math.random() * 8)],
+      "Gurgaon",
+      "Kolkata",
+    ][Math.floor(Math.random() * 10)],
 
     salary: [
       "₹4 LPA",
@@ -363,11 +370,18 @@ const jobsData = [
       "₹15 LPA",
       "₹18 LPA",
       "₹20 LPA",
-    ][Math.floor(Math.random() * 8)],
+      "₹25 LPA",
+      "₹30 LPA",
+    ][Math.floor(Math.random() * 10)],
 
-    type: ["Full Time", "Remote", "Hybrid", "Internship", "Part Time"][
-      Math.floor(Math.random() * 5)
-    ],
+    type: [
+      "Full Time",
+      "Remote",
+      "Hybrid",
+      "Internship",
+      "Part Time",
+      "Contract",
+    ][Math.floor(Math.random() * 6)],
 
     level: ["Fresher", "Junior", "Mid Level", "Senior Level", "Internship"][
       Math.floor(Math.random() * 5)
@@ -511,6 +525,11 @@ function App() {
                   Next →
                 </button>
               </div>
+              <About />
+              <Features />
+              <Stats />
+              <Contact />
+              <Footer />
             </>
           }
         />
@@ -530,11 +549,6 @@ function App() {
         />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <About />
-      <Features />
-      <Stats />
-      <Contact />
-      <Footer />
     </BrowserRouter>
   );
 }
