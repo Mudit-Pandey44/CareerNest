@@ -15,6 +15,17 @@ import zomato from "../assets/logos/zomato.png";
 import paytm from "../assets/logos/paytm.png";
 import startup from "../assets/logos/startup.png";
 
+import netflix from "../assets/logos/netflix.png";
+import adobe from "../assets/logos/adobe.png";
+import spotify from "../assets/logos/spotify.png";
+import ibm from "../assets/logos/ibm.png";
+import oracle from "../assets/logos/oracle.png";
+import intel from "../assets/logos/intel.png";
+import samsung from "../assets/logos/samsung.png";
+import uber from "../assets/logos/uber.png";
+import ola from "../assets/logos/ola.png";
+import accenture from "../assets/logos/accenture.png";
+
 const applyJob = async (job) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const resume = localStorage.getItem("resume");
@@ -50,6 +61,17 @@ const logos = {
   Zomato: zomato,
   Paytm: paytm,
   Startup: startup,
+
+  Netflix: netflix,
+  Adobe: adobe,
+  Spotify: spotify,
+  IBM: ibm,
+  Oracle: oracle,
+  Intel: intel,
+  Samsung: samsung,
+  Uber: uber,
+  Ola: ola,
+  Accenture: accenture,
 };
 
 const Card = ({

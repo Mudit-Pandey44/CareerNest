@@ -21,9 +21,7 @@ function Auth() {
     setSuccess("");
   }
 
-  async function handleSubmit() {
-    console.log("Button clicked");
-
+  function handleSubmit() {
     // validation
     if (mode === "signup" && form.name.trim() === "") {
       setError("Name is required");
@@ -40,52 +38,36 @@ function Auth() {
       return;
     }
 
-    try {
-      const url =
-        mode === "login"
-          ? "http://localhost:5000/login"
-          : "http://localhost:5000/signup";
+    // SIGNUP
+    if (mode === "signup") {
+      localStorage.setItem("user", JSON.stringify(form));
 
-      console.log("API URL:", url);
-      console.log("Sending Data:", form);
+      setSuccess("Signup successful ✅");
 
-      const res = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      setTimeout(() => {
+        setMode("login");
+      }, 1000);
+    }
 
-      const data = await res.json();
+    // LOGIN
+    else {
+      const savedUser = JSON.parse(localStorage.getItem("user"));
 
-      console.log("Response:", data);
+      if (
+        savedUser &&
+        savedUser.email === form.email &&
+        savedUser.password === form.password
+      ) {
+        localStorage.setItem("loggedInUser", JSON.stringify(savedUser));
 
-      // LOGIN
-      if (mode === "login") {
-        if (data.user) {
-          localStorage.setItem("user", JSON.stringify(data.user));
-          setSuccess("Login successful ✅");
-
-          setTimeout(() => {
-            navigate("/");
-          }, 1000);
-        } else {
-          setError(data.message || "Login failed");
-        }
-      }
-
-      // SIGNUP
-      else {
-        setSuccess(data.message || "Signup success");
+        setSuccess("Login successful ✅");
 
         setTimeout(() => {
-          setMode("login");
+          navigate("/");
         }, 1000);
+      } else {
+        setError("Invalid email or password");
       }
-    } catch (err) {
-      console.log("ERROR:", err);
-      setError("Server error (backend check kar)");
     }
   }
 

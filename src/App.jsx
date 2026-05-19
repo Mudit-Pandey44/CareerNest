@@ -10,26 +10,11 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import JobDetails from "./components/JobDetails";
 import SavedJobs from "./pages/SavedJobs";
+import About from "./components/About";
+import Features from "./components/Features";
+import Stats from "./components/Stats";
 
 import Profile from "./pages/Profile";
-
-function AutoRedirect() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-
-    if (!user) {
-      const timer = setTimeout(() => {
-        navigate("/auth");
-      }, 60000);
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  return null;
-}
 
 /* ====== BIG JOB DATA (36 JOBS = 6 PAGES) ====== */
 const jobsData = [
@@ -307,6 +292,89 @@ const jobsData = [
     type: "Remote",
     level: "Beginner",
   },
+  // update 6 to 50
+
+  ...Array.from({ length: 270 }, (_, i) => ({
+    company: [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Infosys",
+      "TCS",
+      "Wipro",
+      "Zoho",
+      "Flipkart",
+      "Swiggy",
+      "Zomato",
+      "Paytm",
+      "Startup",
+      "Netflix",
+      "Adobe",
+      "Spotify",
+      "IBM",
+      "Oracle",
+      "Intel",
+      "Samsung",
+      "Uber",
+      "Ola",
+      "Accenture",
+    ][Math.floor(Math.random() * 22)],
+
+    title: [
+      "Frontend Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "React Developer",
+      "UI/UX Designer",
+      "Python Developer",
+      "SEO Specialist",
+      "DevOps Engineer",
+      "Cloud Engineer",
+      "AI Engineer",
+      "Mobile App Developer",
+      "Data Analyst",
+      "Software Engineer",
+      "Graphic Designer",
+      "HR Executive",
+      "Content Writer",
+      "Digital Marketer",
+      "Cyber Security Analyst",
+      "Java Developer",
+      "Product Manager",
+    ][Math.floor(Math.random() * 20)],
+
+    location: [
+      "Delhi",
+      "Bangalore",
+      "Noida",
+      "Hyderabad",
+      "Mumbai",
+      "Pune",
+      "Remote",
+      "Chennai",
+    ][Math.floor(Math.random() * 8)],
+
+    salary: [
+      "₹4 LPA",
+      "₹6 LPA",
+      "₹8 LPA",
+      "₹10 LPA",
+      "₹12 LPA",
+      "₹15 LPA",
+      "₹18 LPA",
+      "₹20 LPA",
+    ][Math.floor(Math.random() * 8)],
+
+    type: ["Full Time", "Remote", "Hybrid", "Internship", "Part Time"][
+      Math.floor(Math.random() * 5)
+    ],
+
+    level: ["Fresher", "Junior", "Mid Level", "Senior Level", "Internship"][
+      Math.floor(Math.random() * 5)
+    ],
+
+    time: `${Math.floor(Math.random() * 7) + 1} Days Ago`,
+  })),
 ];
 
 function App() {
@@ -335,7 +403,7 @@ function App() {
     localStorage.setItem("savedJobs", JSON.stringify(updated));
   }
 
-  const jobsPerPage = 6;
+  const jobsPerPage = Math.floor(Math.random() * 6) + 25;
 
   const filteredJobs = jobsData.filter((job) => {
     const matchSearch =
@@ -358,8 +426,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar search={search} setSearch={setSearch} />
-      <AutoRedirect />
-
       <Routes>
         <Route
           path="/"
@@ -445,9 +511,6 @@ function App() {
                   Next →
                 </button>
               </div>
-
-              <Contact />
-              <Footer />
             </>
           }
         />
@@ -467,6 +530,11 @@ function App() {
         />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <About />
+      <Features />
+      <Stats />
+      <Contact />
+      <Footer />
     </BrowserRouter>
   );
 }
